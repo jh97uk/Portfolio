@@ -1,0 +1,11 @@
+<article>
+    <header>
+        <a href="{{post.url}}">
+            <h3>{{post.data.title}}</h3>
+        </a>
+        <p>
+            <time datetime="{{date}}">{{post.data.date}}</time>
+        </p>
+    </header>
+    <p>{% excerpt post %}</p>
+</article>

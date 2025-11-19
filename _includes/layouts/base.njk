@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Jessie Heald's Blog">
+    <meta name="fediverse:creator" content="@JessieHealdUK@beige.party">
+</head>
+
+<body>
+    <div class="container">
+        <div class="above-water">
+            <nav class="{% if not showHeader %}no-header{% endif %}">
+                <h2>Jessie Heald</h2>
+                <h2 class="mob-only">J</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            {% if showHeader %}
+            <header class="hero">
+                <h1>
+                    Hi there.<br>
+                    <em>I'm Jessie...</em>
+                </h1>
+                <p>
+                    a <em>full stack web developer</em> specialising in <em>React and Node JS</em>, based in <em>Birmingham, UK</em>. I'm a <em>results and impact
+                        driven developer</em> with over <em>15 years of experience</em> and passionate
+                    <em>autodidact</em>.
+                    I write <em>scalable, maintainable web apps</em>, with a focus on <em>clean and agile code</em> to
+                    support <em>product growth and stability</em>.
+                </p>
+            </header>
+            {% endif %}
+            <div class="ocean">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+
+        <main>
+            {{content | safe}}
+        </main>
+    </div>
+</body>
+
+</html>

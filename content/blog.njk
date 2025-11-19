@@ -1,0 +1,17 @@
+--- 
+layout: "layouts/base.njk" 
+title: "Blog"
+pagination: 
+    data: collections.blog 
+    size: 5 
+rootPath: "../../"
+---
+<section class="contrast">
+    <h2>I'm writing about</h2>
+    {%- for post in pagination.items%}
+        {% include "layouts/article-exerpt.html"  %}
+    {% endfor -%}
+    {% if pagination.href.next %}
+        <a class="button" href="{{pagination.href.next}}">Next</a>
+    {% endif %}
+</section>

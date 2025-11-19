@@ -1,0 +1,16 @@
+--- 
+layout: "layouts/base.njk"
+---
+<section>
+    <article>
+        <header>
+            <a href="#">
+                <h3>{{title}}</h3>
+            </a>
+            <span>
+                <time datetime="{{date}}">{{date}}</time>
+            </span>
+        </header>
+        {{content | safe}}
+    </article>
+</section>

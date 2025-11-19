@@ -1,0 +1,26 @@
+---
+layout: "layouts/base.njk"
+title: "Home"
+showHeader: true
+rootPath: "../"
+---
+<section class="contrast">
+    <h2>I'm working on:</h2>
+    <div class="cards h">
+        {% for project in collections.projects %}
+            {% include "layouts/project-card.html" %}
+        {% endfor %}
+    </div>
+</section>
+<section class="contrast">
+    <h2>I work for...</h2>
+    {% for job in collections.jobs %}
+        {% include "layouts/career.html" %}
+    {% endfor %}
+</section>
+<section class="contrast">
+    <h2>I'm writing about</h2>
+    {% for post in collections.blog %}
+        {% include "layouts/article-exerpt.html"  %}
+    {% endfor %}
+</section>
