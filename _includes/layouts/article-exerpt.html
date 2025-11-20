@@ -4,7 +4,7 @@
             <h3>{{post.data.title}}</h3>
         </a>
         <p>
-            <time datetime="{{date}}">{{post.data.date}}</time>
+            <time datetime="{{date}}">{{post.data.date | postDate}}</time>
         </p>
     </header>
     <p>{% excerpt post %}</p>

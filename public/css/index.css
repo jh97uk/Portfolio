@@ -134,6 +134,7 @@ a {
 
 .hero p {
     font-size: 1.125rem;
+    margin-top:unset;
 }
 
 .hero h1 em {
@@ -359,6 +360,55 @@ a.button {
     transition: background-color ease-in 0.15s;
 }
 
+section.split{
+    display:flex;
+    gap:30px;
+}
+section.split article{
+    flex-grow:1;
+}
+section.split .card.info{
+    position:sticky;
+    top:15px;
+    left:0;
+    height:fit-content;
+    min-width:200px;
+    display:flex; 
+    flex-direction:column; 
+    color:white;
+    padding:10px;
+}
+article p{
+    margin-top:unset;
+}
+article h1, article h2, article h3, article h4, article h5, article h6{
+    color:white;
+    margin-bottom:unset;
+}
+article ul li{
+    color: var(--link-color-tertiary);
+}
+article code{
+    font-size:12px;
+}
+article header h1, article header h3{
+    color:unset;
+}
+article em{
+    color:unset;
+}
+article{
+    font-size:16px;
+}
+article h2{
+    font-size:2.4em;
+}
+article h3{
+    font-size: 1.8em;
+}
+article h4{
+    font-size: 1.2em;
+}
 a.button:hover{
     background-color: var(--card-color);
 }
@@ -383,6 +433,9 @@ a.button:hover{
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+    section.split{
+        flex-direction: column;
+    }
 }
 
 @media (max-width:500px) {
@@ -400,5 +453,14 @@ a.button:hover{
     }
     .cards {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion){
+    .wave{
+        animation: none;
+    }
+    .wave:nth-of-type(2){
+        animation: none;
     }
 }

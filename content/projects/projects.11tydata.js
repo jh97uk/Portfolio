@@ -3,5 +3,5 @@ export default {
 	tags: [
 		"projects"
 	],
-	"layout": "layouts/post.njk",
+	"layout": "layouts/project-post.njk",
 };

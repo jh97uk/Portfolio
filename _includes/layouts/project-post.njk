@@ -1,7 +1,7 @@
 --- 
 layout: "layouts/base.njk"
 ---
-<section>
+<section class="split">
     <article>
         <header>
             <a href="#">
@@ -13,4 +13,9 @@ layout: "layouts/base.njk"
         </header>
         {{content | safe}}
     </article>
+    <div class="card info">
+        <b>Languages:</b> {{languages}}<br>
+        <b>Technologies:</b> {{technologies}}<br>
+        <a href="{{url}}" style="font-weight:bold;">Link</a>
+    </div>
 </section>

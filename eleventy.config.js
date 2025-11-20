@@ -5,7 +5,9 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import blogTools from 'eleventy-plugin-blog-tools'
 import pluginFilters from "./_config/filters.js";
-
+import markdownIt from "markdown-it";
+import markdownItAnchor from 'markdown-it-anchor'
+import {DateTime} from 'luxon'
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -18,6 +20,16 @@ export default async function(eleventyConfig) {
 			return false;
 		}
 	});
+
+	eleventyConfig.addGlobalData(
+        "eleventyComputed.eleventyExcludeFromCollections",
+        function () {
+            return data => {
+                return data.draft
+            }
+        }
+    )
+
 
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -130,6 +142,11 @@ export default async function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	eleventyConfig.addFilter("postDate", dateObj => {
+        let isDateObj = dateObj instanceof Date;
+
+        return DateTime.fromJSDate(isDateObj ? dateObj : new Date(dateObj)).toLocaleString(DateTime.DATE_MED)
+    })
 };
 
 export const config = {
