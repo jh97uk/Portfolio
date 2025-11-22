@@ -5,8 +5,7 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import blogTools from 'eleventy-plugin-blog-tools'
 import pluginFilters from "./_config/filters.js";
-import markdownIt from "markdown-it";
-import markdownItAnchor from 'markdown-it-anchor'
+import metadata from "./_data/metadata.js";
 import {DateTime} from 'luxon'
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -78,8 +77,7 @@ export default async function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"
-		outputPath: "/feed/feed.xml",
-		stylesheet: "pretty-atom-feed.xsl",
+		outputPath: "/feed.xml",
 		templateData: {
 			eleventyNavigation: {
 				key: "Feed",
@@ -91,12 +89,12 @@ export default async function(eleventyConfig) {
 			limit: 10,
 		},
 		metadata: {
-			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			language: metadata.language,
+			title: metadata.title,
+			subtitle: metadata.description,
+			base: metadata.url,
 			author: {
-				name: "Your Name"
+				name: metadata.author.name
 			}
 		}
 	});
