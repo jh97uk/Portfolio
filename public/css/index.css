@@ -365,14 +365,14 @@ a.button {
 
 section.split{
     display:flex;
-    gap:30px;
+    gap:40px;
 }
 section.split article{
     flex-grow:1;
 }
 section.split .card.info{
     position:sticky;
-    top:15px;
+    top:40px;
     left:0;
     height:fit-content;
     min-width:200px;
@@ -380,6 +380,16 @@ section.split .card.info{
     flex-direction:column; 
     color:white;
     padding:10px;
+}
+section.split .card.info b:not(:first-of-type){
+    margin-top:10px;
+}
+section.split .card.info a{
+    padding:10px;
+    border:1px solid orange;
+    margin-top:10px;
+    border-radius: var(--squarcle-radius);
+    text-align: center;
 }
 article p{
     margin-top:unset;
