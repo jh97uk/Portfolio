@@ -131,6 +131,7 @@ a {
     color: var(--link-color-secondary);
     font-style: none;
     text-decoration: none;
+    font-weight:bold;
 }
 
 .hero p {
