@@ -125,6 +125,7 @@ nav ul {
 
 nav ul li a {
     color: var(--link-color);
+    font-weight: normal !important;
 }
 
 a {
