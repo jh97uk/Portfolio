@@ -85,6 +85,7 @@ main {
     margin: 0px auto;
     padding-top: var(--content-padding);
     padding-bottom: var(--content-padding);
+    box-sizing:border-box;
 }
 
 .container {
@@ -170,7 +171,7 @@ section.contrast h2 {
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
 }
 
 .card {
@@ -412,7 +413,9 @@ article h4{
 a.button:hover{
     background-color: var(--card-color);
 }
-
+pre[class*="language-"]{
+    background-color: var(--card-color);
+}
 @media (max-width: 900px) {
 
     section,
@@ -428,6 +431,7 @@ a.button:hover{
         gap: 25px;
     }
 }
+
 
 @media (max-width:750px) {
     .cards {
