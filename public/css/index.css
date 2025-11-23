@@ -148,6 +148,7 @@ article header p time {
     color: var(--link-color-tertiary);
 }
 
+
 main {
     background: var(--secondary-color);
     flex-grow: 1;
@@ -316,6 +317,9 @@ article {
     font-size: 16px;
     margin-bottom:25px;
 }
+article:not(:only-child){
+    margin-bottom:0px;
+}
 
 article h3 {
     font-size: 2em;
@@ -380,6 +384,7 @@ section.split .card.info{
     flex-direction:column; 
     color:white;
     padding:10px;
+    margin-bottom: 30px;
 }
 section.split .card.info b:not(:first-of-type){
     margin-top:10px;
