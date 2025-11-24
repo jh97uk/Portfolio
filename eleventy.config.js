@@ -6,28 +6,29 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import blogTools from 'eleventy-plugin-blog-tools'
 import pluginFilters from "./_config/filters.js";
 import metadata from "./_data/metadata.js";
-import {DateTime} from 'luxon'
+import { DateTime } from 'luxon'
+import CleanCSS from "clean-css";
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-export default async function(eleventyConfig) {
+export default async function (eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		if (data.draft) {
 			data.title = `${data.title} (draft)`;
 		}
 
-		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+		if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
 		}
 	});
 
 	eleventyConfig.addGlobalData(
-        "eleventyComputed.eleventyExcludeFromCollections",
-        function () {
-            return data => {
-                return data.draft
-            }
-        }
-    )
+		"eleventyComputed.eleventyExcludeFromCollections",
+		function () {
+			return data => {
+				return data.draft
+			}
+		}
+	)
 
 
 	// Copy the contents of the `public` folder to the output folder
@@ -103,15 +104,15 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		// Output formats for each image.
 		formats: ["avif", "webp", "auto"],
-
-		// widths: ["auto"],
-
-		failOnError: false,
+		widths: [null],
+		outputDir: "./_site/assets/img/",
+		failOnError: true,
 		htmlOptions: {
 			imgAttributes: {
 				// e.g. <img loading decoding> assigned on the HTML tag will override these values.
 				loading: "lazy",
 				decoding: "async",
+				sizes: "100vw"
 			}
 		},
 
@@ -128,7 +129,9 @@ export default async function(eleventyConfig) {
 		// slugify: eleventyConfig.getFilter("slugify"),
 		// selector: "h1,h2,h3,h4,h5,h6", // default
 	});
-
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
@@ -141,10 +144,10 @@ export default async function(eleventyConfig) {
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.addFilter("postDate", dateObj => {
-        let isDateObj = dateObj instanceof Date;
+		let isDateObj = dateObj instanceof Date;
 
-        return DateTime.fromJSDate(isDateObj ? dateObj : new Date(dateObj)).toLocaleString(DateTime.DATE_MED)
-    })
+		return DateTime.fromJSDate(isDateObj ? dateObj : new Date(dateObj)).toLocaleString(DateTime.DATE_MED)
+	})
 };
 
 export const config = {

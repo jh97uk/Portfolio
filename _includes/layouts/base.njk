@@ -6,8 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jessie Heald - {{title}}</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/index.css" />
+
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-500.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-500italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-600.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-600italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-800.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-800italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-900.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-900italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-italic.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-regular.woff2" crossorigin/>
+     
+    {% set css %} {% include "../../public/css/index.css" %} {% endset %}
+    {% set codeHighlightCss %} {% include "../../public/css/prism-okaidia.css" %} {% endset %}
+    <style eleventy:ignore>
+        {{ codeHighlightCss | cssmin | safe}}
+        {{ css | cssmin | safe}}
+    </style>
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Jessie Heald's Blog">
     <meta name="keywords" content="fullstack, developer, fullstack developer, programming, HTML, CSS, JavaScript, React, Express, Electron, git, FOSS, open source, jessie heald">
     <meta name="author" content="Jessie Heald">
@@ -15,6 +33,7 @@
 </head>
 
 <body>
+    
     <div class="container">
         <div class="above-water">
             <nav class="{% if not showHeader %}no-header{% endif %}">
@@ -24,7 +43,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/projects">Projects</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="https://tally.so/r/1AAo21">Contact</a></li>
                 </ul>
             </nav>
             {% if showHeader %}
