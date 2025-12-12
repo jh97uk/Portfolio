@@ -6,34 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jessie Heald - {{title}}</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-italic.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-regular.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700italic.woff2" crossorigin />
 
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-500.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-500italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-600.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-600italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-700italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-800.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-800italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-900.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-900italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-italic.woff2" crossorigin/>
-    <link rel="preload" as="font" type="font/woff2" href="/css/nunito-sans-v19-latin-regular.woff2" crossorigin/>
-     
     {% set css %} {% include "../../public/css/index.css" %} {% endset %}
     {% set codeHighlightCss %} {% include "../../public/css/prism-okaidia.css" %} {% endset %}
     <style eleventy:ignore>
-        {{ codeHighlightCss | cssmin | safe}}
-        {{ css | cssmin | safe}}
+        {{codeHighlightCss | cssmin | safe}}
+        {{css | cssmin | safe}}
     </style>
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Jessie Heald's Blog">
-    <meta name="keywords" content="fullstack, developer, fullstack developer, programming, HTML, CSS, JavaScript, React, Express, Electron, git, FOSS, open source, jessie heald">
+    <meta name="keywords"
+        content="fullstack, developer, fullstack developer, programming, HTML, CSS, JavaScript, React, Express, Electron, git, FOSS, open source, jessie heald">
     <meta name="author" content="Jessie Heald">
-    <meta name="description" content="I'm a full stack React and Node developer, based in Birmingham, UK. I'm a results and impact driven developer with over 15 years of experience and a love for FOSS. I write scalable, maintainable web apps, with a focus on clean and agile code to support product growth and stability.">
+    {%if not metaDescription%}
+    <meta name="description"
+        content="I'm a full stack React and Node developer, based in Birmingham, UK. I'm a results and impact driven developer with over 15 years of experience and a love for FOSS. I write scalable, maintainable web apps, with a focus on clean and agile code to support product growth and stability.">
+        {%else%}
+        <meta name="description"
+        content="{{metaDescription}}">
+    {%endif%}
 </head>
-
 <body>
-    
     <div class="container">
         <div class="above-water">
             <nav class="{% if not showHeader %}no-header{% endif %}">
@@ -53,10 +49,11 @@
                     <em>I'm Jessie...</em>
                 </h1>
                 <p>
-                    a <em>full stack React and Node developer</em>, based in <em>Birmingham, UK</em>. I'm a <em>results and impact
+                    a <em>full stack React and Node developer</em>, based in <em>Birmingham, UK</em>. I'm a <em>results
+                        and impact
                         driven developer</em> with over <em>15 years of experience</em> and a love for <em>FOSS</em>.
-                    I write <em>scalable, maintainable web apps</em>, with a focus on <em>clean and agile code</em> to
-                    support <em>product growth and stability</em>.
+                    I write <em>maintainable web apps that scale</em>, with a focus on <em>clean and agile code</em> to
+                    support <em>sustainable growth and stability</em>.
                 </p>
             </header>
             {% endif %}
