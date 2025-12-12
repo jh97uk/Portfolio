@@ -197,6 +197,7 @@ nav {
 }
 
 section h2 {
+    margin-top:20px;
     margin-bottom: 20px;
 }
 
@@ -465,7 +466,7 @@ article h4{
     font-size: 1.2em;
 }
 article img{
-    max-width: 70%;
+    max-width: 100%;
     height:auto;
 }
 a.button:hover{
