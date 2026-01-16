@@ -1,4 +1,4 @@
---- 
+---
 layout: "layouts/base.njk"
 ---
 <section class="split">
@@ -14,8 +14,21 @@ layout: "layouts/base.njk"
         {{content | safe}}
     </article>
     <div class="card info">
-        <b>Languages:</b> {{languages}}<br>
-        <b>Technologies:</b> {{technologies}}<br>
+
+        <b>Languages:</b><br>
+        <ul class="inline-list">
+            {% for language in languages %}
+            <li class="pill dark">{{language}}</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <b>Technologies:</b><br>
+        <ul class="inline-list">
+            {% for technology in technologies %}
+            <li class="pill dark">{{technology}}</li>
+            {% endfor %}
+        </ul>
+        <br>
         <a href="{{url}}" style="font-weight:bold;">Link</a>
     </div>
 </section>

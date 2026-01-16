@@ -1,41 +1,50 @@
 /* nunito-sans-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/css/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/css/nunito-sans-v19-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* nunito-sans-italic - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/css/nunito-sans-v19-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/css/nunito-sans-v19-latin-italic.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* nunito-sans-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/css/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/css/nunito-sans-v19-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* nunito-sans-700italic - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: url('/css/nunito-sans-v19-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/css/nunito-sans-v19-latin-700italic.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 
 :root {
+    --main-bg: white;
     --primary-color: #c03ec0;
     --secondary-color: #3a1951;
     --card-color: #633e82;
@@ -53,9 +62,11 @@
     --main-vertical-padding: 20px;
     --text-color-tertiary: rgba(244, 212, 255, 0.8);
 }
-body{
+
+body {
     background-color: var(--secondary-color);
 }
+
 h1,
 h2,
 h3,
@@ -105,12 +116,15 @@ em {
 header.hero h1 em {
     color: var(--primary-color);
 }
-.mob-only{
-    display:none;
+
+.mob-only {
+    display: none;
 }
-.container{
-    background-color: white;
+
+.container {
+    background-color: var(--main-bg);
 }
+
 .container,
 main {
     width: 100%;
@@ -118,9 +132,12 @@ main {
     flex-direction: column;
     gap: var(--section-gap);
     margin: 0px auto;
-    padding-top: var(--content-padding);
     padding-bottom: var(--content-padding);
-    box-sizing:border-box;
+    box-sizing: border-box;
+}
+
+.above-water {
+    padding-top: var(--content-padding);
 }
 
 .container {
@@ -129,6 +146,23 @@ main {
     height: 100%;
     flex-direction: column;
     gap: 0;
+}
+
+.hover-enlarge {
+    transition-duration: 0.30s;
+}
+
+.hover-enlarge:hover {
+    transform: scale(1.015);
+}
+
+a {
+    transition: all 0.5s ease;
+}
+
+a:hover {
+
+    filter: brightness(1.18);
 }
 
 nav {
@@ -167,12 +201,12 @@ a {
     color: var(--link-color-secondary);
     font-style: none;
     text-decoration: none;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .hero p {
     font-size: 1.125rem;
-    margin-top:unset;
+    margin-top: unset;
 }
 
 .hero h1 em {
@@ -197,15 +231,16 @@ nav {
 }
 
 section h2 {
-    margin-top:20px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 section.contrast h2 {
     color: white;
 }
-section:last-of-type{
-    margin-bottom:var(--section-gap);
+
+section:last-of-type {
+    margin-bottom: var(--section-gap);
 }
 
 
@@ -232,7 +267,7 @@ section:last-of-type{
     border-top-left-radius: var(--squarcle-radius);
     border-top-right-radius: var(--squarcle-radius);
     width: 100%;
-    height:auto;
+    height: auto;
 }
 
 .card.base {
@@ -265,24 +300,28 @@ section:last-of-type{
     padding: 16px;
     padding-top: 8px
 }
-.card .content.split{
+
+.card .content.split {
     display: grid;
-    padding-top:16px;
+    padding-top: 16px;
     grid-template-columns: 3fr 10fr;
 }
-.card .content.split img{
+
+.card .content.split img {
     border-radius: var(--squarcle-radius);
 }
-.card .content.split h4{
-    color:white;
+
+.card .content.split h4 {
+    color: white;
 }
-.card.base .content p:first-of-type{
-    margin-top:10px;
+
+.card.base .content p:first-of-type {
+    margin-top: 10px;
 }
 
 .card p {
     color: var(--card-text-primary);
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 .card h3 {
@@ -294,6 +333,22 @@ section:last-of-type{
 
 nav {
     margin-top: 20px;
+}
+
+.above-water {
+    position: relative;
+}
+
+.above-water svg.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    filter: opacity(0.15);
+    pointer-events: none;
+    user-select: none;
 }
 
 .above-water nav,
@@ -354,10 +409,11 @@ nav {
 
 article {
     font-size: 16px;
-    margin-bottom:25px;
+    margin-bottom: 25px;
 }
-article:not(:only-child){
-    margin-bottom:0px;
+
+article:not(:only-child) {
+    margin-bottom: 0px;
 }
 
 article h3 {
@@ -378,8 +434,9 @@ article p {
 article p:first-of-type {
     margin-top: 6px;
 }
-article header p{
-    margin-top:0px !important;
+
+article header p {
+    margin-top: 0px !important;
 }
 
 blockquote {
@@ -406,75 +463,142 @@ a.button {
     transition: background-color ease-in 0.15s;
 }
 
-section.split{
-    display:flex;
-    gap:40px;
+section.split {
+    display: flex;
+    gap: 40px;
 }
-section.split article{
-    flex-grow:1;
+
+section.split article {
+    flex-grow: 1;
 }
-section.split .card.info{
-    position:sticky;
-    top:40px;
-    left:0;
-    height:fit-content;
-    min-width:200px;
-    display:flex; 
-    flex-direction:column; 
-    color:white;
-    padding:10px;
+
+section.split .card.info {
+    position: sticky;
+    top: 40px;
+    left: 0;
+    height: fit-content;
+    min-width: 225px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
     margin-bottom: 30px;
 }
-section.split .card.info b:not(:first-of-type){
-    margin-top:10px;
+
+section.split .card.info b:not(:first-of-type) {
+    margin-top: 10px;
 }
-section.split .card.info a{
-    padding:10px;
-    border:1px solid orange;
-    margin-top:10px;
+
+section.split .card.info a {
+    padding: 10px;
+    border: 1px solid orange;
+    margin-top: 10px;
     border-radius: var(--squarcle-radius);
     text-align: center;
 }
-article p{
-    margin-top:unset;
+
+article p {
+    margin-top: unset;
 }
-article h1, article h2, article h3, article h4, article h5, article h6{
-    color:white;
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    color: white;
 }
-article ul li{
+
+article ul li {
     color: var(--link-color-tertiary);
 }
-article code{
-    font-size:12px;
+
+article code {
+    font-size: 12px;
 }
-article header h1, article header h3{
-    color:unset;
+
+article header h1,
+article header h3 {
+    color: unset;
 }
-article em{
-    color:unset;
+
+article em {
+    color: unset;
 }
-article{
-    font-size:16px;
+
+article {
+    font-size: 16px;
 }
-article h2{
-    font-size:2.4em;
+
+article h2 {
+    font-size: 2.4em;
 }
-article h3{
+
+article h3 {
     font-size: 1.8em;
 }
-article h4{
+
+article h4 {
     font-size: 1.2em;
 }
-article img{
+
+article img {
     max-width: 100%;
-    height:auto;
+    height: auto;
 }
-a.button:hover{
+
+a.button:hover {
     background-color: var(--card-color);
 }
-pre[class*="language-"]{
+
+pre[class*="language-"] {
     background-color: var(--card-color);
 }
+
+ul.inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul li.pill {
+    width: fit-content;
+    padding: 8px;
+    background: var(--primary-color);
+    border-radius: 4px;
+    line-height: normal;
+    margin-bottom: 0px !important;
+}
+
+ul li.pill.dark {
+    background-color: var(--secondary-color);
+}
+
+.pill.dark {
+    transition-duration: 1s;
+}
+
+.pill:hover {
+    filter: brightness(1.25);
+}
+
+ul li {
+    color: var(--card-text-primary);
+}
+
+ul li:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+nav li {
+    margin-bottom: unset !important;
+}
+
 @media (max-width: 900px) {
 
     section,
@@ -496,34 +620,54 @@ pre[class*="language-"]{
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    section.split{
+
+    section.split {
         flex-direction: column;
     }
 }
 
 @media (max-width:500px) {
-    .above-water nav{
-        margin-bottom:calc(var(--section-gap) - 20px) !important;
+    .above-water nav {
+        margin-bottom: calc(var(--section-gap) - 20px) !important;
     }
-    .above-water header{
-         margin-bottom:calc(var(--section-gap) - 40px) !important;
+
+    .above-water header {
+        margin-bottom: calc(var(--section-gap) - 40px) !important;
     }
-    nav h2{
-        display:none;
+
+    nav h2 {
+        display: none;
     }
-    .mob-only{
-        display:unset !important;
+
+    .mob-only {
+        display: unset !important;
     }
+
     .cards {
         grid-template-columns: 1fr;
     }
 }
 
-@media (prefers-reduced-motion){
-    .wave{
+@media (prefers-reduced-motion) {
+    .wave {
         animation: none;
     }
-    .wave:nth-of-type(2){
+
+    .wave:nth-of-type(2) {
         animation: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg: rgb(37, 7, 45);
+        --primary-color: hsl(300, 100%, 68%);
+        --text-emphasis-color: #ef76f1;
+        --link-color: rgb(249, 166, 180);
+    }
+
+    .hero p,
+    .hero h1 {
+        color: #f6dbff;
     }
 }

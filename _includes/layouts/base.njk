@@ -24,14 +24,24 @@
     {%if not metaDescription%}
     <meta name="description"
         content="I'm a full stack React and Node developer, based in Birmingham, UK. I'm a results and impact driven developer with over 15 years of experience and a love for FOSS. I write scalable, maintainable web apps, with a focus on clean and agile code to support product growth and stability.">
-        {%else%}
-        <meta name="description"
-        content="{{metaDescription}}">
+    {%else%}
+    <meta name="description" content="{{metaDescription}}">
     {%endif%}
 </head>
+
 <body>
     <div class="container">
         <div class="above-water">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stars">
+                <filter id="filter">
+                    <feTurbulence baseFrequency="0.2"></feTurbulence>
+                    <feColorMatrix values="0 0 0 9 -4
+                               0 0 0 9 -4
+                               0 0 0 9 -4
+                               0 0 0 9 -4"></feColorMatrix>
+                </filter>
+                <rect filter="url(#filter)" width="100%" height="100%"></rect>
+            </svg>
             <nav class="{% if not showHeader %}no-header{% endif %}">
                 <h2>Jessie Heald</h2>
                 <h2 class="mob-only">J</h2>
@@ -49,10 +59,12 @@
                     <em>I'm Jessie...</em>
                 </h1>
                 <p>
-                    a <em>full stack React and Node developer</em>, based in <em>Birmingham, UK</em>. I'm a <em>results
+                    a <em>full stack React and Node developer</em>, based in <em>Birmingham, UK</em>. I'm an
+                    <em>accessibility
                         and impact
                         driven developer</em> with over <em>15 years of experience</em> and a love for <em>FOSS</em>.
-                    I write <em>maintainable web apps that scale</em>, with a focus on <em>clean and agile code</em> to
+                    I write <em>maintainable web apps and sites that scale</em>, with a focus on <em>clean and agile
+                        code</em> to
                     support <em>sustainable growth and stability</em>.
                 </p>
             </header>

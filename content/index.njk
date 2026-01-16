@@ -7,7 +7,7 @@ rootPath: "../"
 <section class="contrast">
     <h2>I'm working on:</h2>
     <div class="cards h">
-        {% for project in collections.projects %}
+        {% for project in collections.projects | sortDataByDate %}
             {% include "layouts/project-card.html" %}
         {% endfor %}
     </div>
