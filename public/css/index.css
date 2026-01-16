@@ -270,6 +270,10 @@ section:last-of-type {
     height: auto;
 }
 
+section .card.base:not(:last-child){
+    margin-bottom:1.5rem;
+}
+
 .card.base {
     filter: unset;
 }
