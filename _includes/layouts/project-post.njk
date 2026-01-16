@@ -15,20 +15,19 @@ layout: "layouts/base.njk"
     </article>
     <div class="card info">
 
-        <b>Languages:</b><br>
+        <b>Languages:</b>
         <ul class="inline-list">
             {% for language in languages %}
             <li class="pill dark">{{language}}</li>
             {% endfor %}
         </ul>
         <br>
-        <b>Technologies:</b><br>
+        <b>Technologies:</b>
         <ul class="inline-list">
             {% for technology in technologies %}
             <li class="pill dark">{{technology}}</li>
             {% endfor %}
         </ul>
-        <br>
         <a href="{{url}}" style="font-weight:bold;">Link</a>
     </div>
 </section>
