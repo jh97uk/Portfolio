@@ -34,7 +34,7 @@ export default async function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPlugin(blogTools);
-	eleventyConfig.addPassthroughCopy({"./content/assets/favicon.svg":"/"});
+	eleventyConfig.addPassthroughCopy({ "./content/assets/favicon.svg": "/" });
 	eleventyConfig
 		.addPassthroughCopy({
 			"./public/": "/"
@@ -149,6 +149,11 @@ export default async function (eleventyConfig) {
 
 		return DateTime.fromJSDate(isDateObj ? dateObj : new Date(dateObj)).toLocaleString(DateTime.DATE_MED)
 	})
+	eleventyConfig.addFilter("sortDataByDate", arr => {
+		return arr.sort((a, b) => {
+			return new Date(b.data.date) - new Date(a.data.date);
+		});
+	});
 };
 
 export const config = {
