@@ -292,6 +292,7 @@ section .card.base:not(:last-child){
 }
 
 .card.base header span {
+    min-width: 100px;
     align-self: center;
     color: var(--text-color-tertiary);
 }
@@ -304,7 +305,9 @@ section .card.base:not(:last-child){
     padding: 16px;
     padding-top: 8px
 }
-
+.card.base .content{
+    padding-top:16px;
+}
 .card .content.split {
     display: grid;
     padding-top: 16px;
