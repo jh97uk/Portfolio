@@ -1,7 +1,8 @@
+content/
+content/*
 _site/
 node_modules/
 .cache
 _11tycms.json
 _11tycms.js
 _11tycms.ts
-content/
