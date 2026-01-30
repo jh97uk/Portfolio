@@ -116,7 +116,11 @@ em {
 header.hero h1 em {
     color: var(--primary-color);
 }
-
+header.hero img{
+    margin-top:2rem; 
+    margin-right:2rem;
+    filter:invert(49%) sepia(96%) saturate(3491%) hue-rotate(271deg) brightness(78%) contrast(94%);
+}
 .mob-only {
     display: none;
 }
@@ -369,7 +373,7 @@ nav {
 
 .ocean {
     position: relative;
-    height: 200px;
+    height: 170px;
     margin-bottom: -2px;
 }
 
@@ -676,5 +680,8 @@ nav li {
     .hero p,
     .hero h1 {
         color: #f6dbff;
+    }
+    header.hero img{
+        filter: invert(72%) sepia(80%) saturate(1309%) hue-rotate(209deg) brightness(94%) contrast(85%);
     }
 }
