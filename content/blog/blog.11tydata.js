@@ -5,6 +5,6 @@ export default {
 	],
 	"layout": "layouts/post.njk",
 	eleventyComputed: {
-		metaDescription: data => data.page.rawInput.substring(0, 155)
+		metaDescription: data => data.shortDescription? data.shortDescription : data.page.rawInput.substring(0, 155)
 	}
 };
