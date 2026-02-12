@@ -208,6 +208,13 @@ a {
     font-weight: bold;
 }
 
+article a{
+    text-decoration: underline;
+}
+article header a{
+    text-decoration: none;
+}
+
 .hero p {
     font-size: 1.125rem;
     margin-top: unset;
@@ -373,7 +380,7 @@ nav {
 
 .ocean {
     position: relative;
-    height: 170px;
+    height: 200px;
     margin-bottom: -2px;
 }
 
@@ -423,7 +430,7 @@ article {
     margin-bottom: 25px;
 }
 
-article:not(:only-child) {
+article:last-child, article:last-of-type{
     margin-bottom: 0px;
 }
 
@@ -472,6 +479,7 @@ a.button {
     color: white;
     background-color: var(--secondary-color);
     transition: background-color ease-in 0.15s;
+    cursor: pointer;
 }
 
 section.split {
@@ -643,11 +651,14 @@ nav li {
     }
 
     .above-water header {
-        margin-bottom: calc(var(--section-gap) - 40px) !important;
+        margin-bottom: calc(var(--section-gap) - 60px) !important;
     }
 
     nav h2 {
         display: none;
+    }
+    header.hero img{
+        width:45px;
     }
 
     .mob-only {
