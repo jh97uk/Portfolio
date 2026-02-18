@@ -8,22 +8,106 @@ rootPath: "../"
     <h2>I'm working on:</h2>
     <div class="cards h">
         {% for project in collections.projects | sortDataByDate %}
-            {% include "layouts/project-card.html" %}
+        {% include "layouts/project-card.html" %}
         {% endfor %}
     </div>
 </section>
 <section class="contrast">
     <h2>I work for...</h2>
-    {% for job in collections.jobs %}
-        {% include "layouts/career.html" %}
+    {% for job in collections.jobs | sortDataByDate %}
+    {% include "layouts/career.html" %}
     {% endfor %}
 </section>
 <section class="contrast">
     <h2>I'm writing about</h2>
     {% for post in collections.blog.slice(0, 2) | sortDataByDate %}
-        {% include "layouts/article-exerpt.html"  %}
+    {% include "layouts/article-exerpt.html" %}
     {% endfor %}
     {% if collections.blog.length > 2 %}
-        <a class="button" href="/blog">See more</a>
+    <a class="button" href="/blog">See more</a>
     {% endif %}
+</section>
+<section class="contrast">
+    <h2>I code in:</h2>
+    <div class="cards languages">
+        <div class="card language">
+            <img src="./assets/icons/javascript.svg" height="35" alt="JavaScript icon" />
+            <h3>JavaScript</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/typescript.svg" alt="TypeScript icon" />
+            <h3>TypeScript</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/php.svg" alt="PHP icon" />
+            <h3>PHP</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/mysql.svg" height="35" alt="MySQL icon" />
+            <h3>MySQL</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/java.svg" height="35" alt="Java icon" />
+            <h3>Java</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/python.svg" height="35" alt="Python icon" />
+            <h3>Python</h3>
+        </div>
+    </div>
+    <h2>I work with:</h2>
+    <div class="cards languages">
+        <div class="card language">
+            <img src="./assets/icons/react.svg" height="35" alt="React icon" eleventy:widths="35, 105"/>
+            <h3>React</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/express.svg" height="35" alt="Express icon" eleventy:widths="35, 105"/>
+            <h3>Express</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/laravel.svg" height="35" alt="Laravel icon" eleventy:widths="35, 105"/>
+            <h3>Laravel</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/postgres.svg" height="35" alt="Postgres icon" eleventy:widths="35, 105"/>
+            <h3>Postgres</h3>
+        </div>
+         <div class="card language">
+            <img src="./assets/icons/sqlite.svg" height="35" alt="SQLite icon" eleventy:widths="35, 105"/>
+            <h3>SQLite</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/mongodb.svg" height="35" alt="MongoDB icon" eleventy:widths="35, 105"/>
+            <h3>MongoDB</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/firebase.svg" height="35" alt="Firebase icon" eleventy:widths="35, 105"/>
+            <h3>Firebase</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/zustand.svg" height="35" alt="Zustand icon" eleventy:widths="35, 105"/>
+            <h3>Zustand</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/electron.svg" height="35" alt="Electron icon" eleventy:widths="35, 105"/>
+            <h3>Electron</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/linux.svg" height="35" alt="Linux icon" eleventy:widths="35, 105" />
+            <h3>Linux</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/docker.svg" height="35" alt="Docker icon" eleventy:widths="35, 105"/>
+            <h3>Docker</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/github.svg" height="35" alt="GitHub icon" eleventy:widths="35, 105"/>
+            <h3>GitHub Actions</h3>
+        </div>
+        <div class="card language">
+            <img src="./assets/icons/11ty.svg" height="35" alt="11ty icon" eleventy:widths="35, 105"/>
+            <h3>11ty</h3>
+        </div>
+    </div>
 </section>
