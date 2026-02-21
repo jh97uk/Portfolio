@@ -116,11 +116,13 @@ em {
 header.hero h1 em {
     color: var(--primary-color);
 }
-header.hero img{
-    margin-top:2rem; 
-    margin-right:2rem;
-    filter:invert(49%) sepia(96%) saturate(3491%) hue-rotate(271deg) brightness(78%) contrast(94%);
+
+header.hero img {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    filter: invert(49%) sepia(96%) saturate(3491%) hue-rotate(271deg) brightness(78%) contrast(94%);
 }
+
 .mob-only {
     display: none;
 }
@@ -208,10 +210,11 @@ a {
     font-weight: bold;
 }
 
-article a{
+article a {
     text-decoration: underline;
 }
-article header a{
+
+article header a {
     text-decoration: none;
 }
 
@@ -281,8 +284,8 @@ section:last-of-type {
     height: auto;
 }
 
-section .card.base:not(:last-child){
-    margin-bottom:1.5rem;
+section .card.base:not(:last-child) {
+    margin-bottom: 1.5rem;
 }
 
 .card.base {
@@ -316,9 +319,11 @@ section .card.base:not(:last-child){
     padding: 16px;
     padding-top: 8px
 }
-.card.base .content{
-    padding-top:16px;
+
+.card.base .content {
+    padding-top: 16px;
 }
+
 .card .content.split {
     display: grid;
     padding-top: 16px;
@@ -430,7 +435,8 @@ article {
     margin-bottom: 25px;
 }
 
-article:last-child, article:last-of-type{
+article:last-child,
+article:last-of-type {
     margin-bottom: 0px;
 }
 
@@ -617,11 +623,38 @@ ul li:not(:last-child) {
 nav li {
     margin-bottom: unset !important;
 }
-@media (min-width:2160px){
-    section{
-        width:1024px;
+
+.card.language {
+    width: fit-content;
+    height:fit-content;
+    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.cards.languages{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    margin-bottom:3rem;
+}
+.cards.languages:last-child{
+    margin-bottom:0px;
+}
+.cards.languages h2{
+    width:100%;
+}
+.card.language img,.card.language picture{
+    height:35px;
+    width:fit-content;
+}
+
+@media (min-width:2160px) {
+    section {
+        width: 1024px;
     }
 }
+
 @media (max-width: 900px) {
 
     section,
@@ -661,8 +694,9 @@ nav li {
     nav h2 {
         display: none;
     }
-    header.hero img{
-        width:45px;
+
+    header.hero img {
+        width: 45px;
     }
 
     .mob-only {
@@ -671,6 +705,9 @@ nav li {
 
     .cards {
         grid-template-columns: 1fr;
+    }
+    .card.language{
+        width:100%;
     }
 }
 
@@ -696,7 +733,8 @@ nav li {
     .hero h1 {
         color: #f6dbff;
     }
-    header.hero img{
+
+    header.hero img {
         filter: invert(72%) sepia(80%) saturate(1309%) hue-rotate(209deg) brightness(94%) contrast(85%);
     }
 }
