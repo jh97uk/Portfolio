@@ -20,7 +20,7 @@ rootPath: "../"
 </section>
 <section class="contrast">
     <h2>I'm writing about</h2>
-    {% for post in collections.blog.slice(0, 2) | sortDataByDate %}
+    {% for post in (collections.blog | sortDataByDate).slice(0, 2) %}
     {% include "layouts/article-exerpt.html" %}
     {% endfor %}
     {% if collections.blog.length > 2 %}
