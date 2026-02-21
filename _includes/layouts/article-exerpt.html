@@ -7,5 +7,12 @@
             <time datetime="{{date}}">{{post.data.date | postDate}}</time>
         </p>
     </header>
-    <p>{% excerpt post %}</p>
+    <p>
+        {% if post.data.shortDescription %}
+            {{post.data.shortDescription}}
+        {% else %}
+            {% excerpt post %}
+        {% endif %}
+
+    </p>
 </article>
