@@ -4,3 +4,7 @@ node_modules/
 _11tycms.json
 _11tycms.js
 _11tycms.ts
+content/assets/*
+content/*/*.md
+.DS_Store
+content/.DS_Store
