@@ -3,7 +3,7 @@ layout: "layouts/base.njk"
 title: "Blog"
 pagination: 
     data: collections.blog 
-    size: 5
+    size: 4
     reverse: true
 rootPath: "../../"
 metaDescription: "My writing about everything coding and beyond!"
@@ -15,5 +15,8 @@ metaDescription: "My writing about everything coding and beyond!"
     {% endfor -%}
     {% if pagination.href.next %}
         <a class="button" href="{{pagination.href.next}}">Next</a>
+    {% endif %}
+    {% if pagination.href.previous %}
+    <a class="button" href="{{pagination.href.previous}}">Previous</a>
     {% endif %}
 </section>
