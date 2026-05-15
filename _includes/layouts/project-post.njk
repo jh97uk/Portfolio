@@ -30,3 +30,16 @@ layout: "layouts/base.njk"
         <a href="{{url}}" style="font-weight:bold;">Link</a>
     </div>
 </section>
+<section class="related-posts">
+    {% set relatedPosts = (tags | relatedPosts(collections)) %}
+    {%if tags and relatedPosts.length > 0 %}
+        <div>
+            <h1>More about this...</h1>
+            <ul>
+                {% for post in relatedPosts %}
+                    {% include "layouts/article-exerpt.html" %}
+                {% endfor %}
+            </ul>
+        </div>
+    {%endif%}
+</section>

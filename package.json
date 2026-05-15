@@ -50,6 +50,7 @@
 	"dependencies": {
 		"@zachleat/heading-anchors": "^1.0.5",
 		"clean-css": "^5.3.3",
-		"eleventy-plugin-blog-tools": "^0.4.1"
+		"eleventy-plugin-blog-tools": "^0.4.1",
+		"posthtml": "^0.16.7"
 	}
 }
