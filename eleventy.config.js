@@ -177,15 +177,17 @@ export default async function (eleventyConfig) {
     ).toLocaleString(DateTime.DATE_MED);
   });
 
-  eleventyConfig.addFilter("relatedPosts", function (tags, collections) {
+  eleventyConfig.addFilter("relatedPosts", function (tags, collections, url) {
     let updatedTags = [...tags];
     updatedTags.shift(); // Remove the base collection like "blog" or "projects"
     let relatedPosts = [];
     updatedTags.forEach((tag) => {
       if (!collections[tag]) return;
-      relatedPosts = collections[tag].splice(0, 4);
+      let matches = collections[tag]
+        .splice(0, 4)
+        .filter((post) => post.url != url);
+      relatedPosts.push(...matches);
     });
-    relatedPosts.shift(); // Remove the first match, which will always be the current page's
     return relatedPosts;
   });
   eleventyConfig.addFilter("sortDataByDate", (arr) => {

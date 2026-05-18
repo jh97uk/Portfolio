@@ -31,7 +31,7 @@ layout: "layouts/base.njk"
     </div>
 </section>
 <section class="related-posts">
-    {% set relatedPosts = (tags | relatedPosts(collections)) %}
+    {% set relatedPosts = (tags | relatedPosts(collections, page.url)) %}
     {%if tags and relatedPosts.length > 0 %}
         <div>
             <h1>More about this...</h1>
